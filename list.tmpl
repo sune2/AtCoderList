@@ -1,0 +1,29 @@
+#encoding UTF-8
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bootstrap.min.css" />
+        <title>AtCoder Result Viewer</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>AtCoder Result Viewer</h1>
+            #for $contest in $contests
+            <h2><a href="$contest.url">$contest.name</a></h2>
+            <table class="table">
+                #for $problem in $contest.problems
+                <tr style="background-color: $problem.color">
+                    <td width="40px">
+                        $problem.pid
+                    </td>
+                    <td>
+                        <a href="$problem.url">$problem.name</a>
+                    </td>
+                </tr>
+                #end for
+            </table>
+            #end for
+        </div>
+    </body>
+</html>
